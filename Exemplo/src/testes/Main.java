@@ -1,7 +1,12 @@
 package testes;
 
 import java.util.ArrayList;
-
+/**
+ * 
+ * @author gobbi9
+ * Testando algumas features novas do Java 8
+ *
+ */
 public class Main {
 	public static void main(String... args) {
 		Usuario u1 = new Usuario("João Silva", 100);;
