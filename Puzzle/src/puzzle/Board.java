@@ -120,8 +120,7 @@ public class Board extends Element {
 	}
 
 	public void updateMovablePieces() {
-		for (Piece piece : pieces)
-			piece.direction = Direction.NONE;
+		pieces.forEach(piece -> piece.direction = Direction.NONE);
 
 		for (int i = 0, line = 0; i < pieces.size(); i++) {
 			if (i % amountOfPieces == 0)
@@ -248,8 +247,12 @@ public class Board extends Element {
 
 	public void draw() {
 		puzzle.background(0);
-		for (Piece piece : pieces)
-			piece.draw();
+		pieces.forEach(Element::draw);
+		//alternativa com lambda expression
+		//pieces.forEach(piece -> piece.draw());
+		//jeito antigo
+		//for (Piece piece : pieces)
+			//piece.draw();
 	}
 
 	public String toString() {
@@ -258,12 +261,12 @@ public class Board extends Element {
 		output.append(Piece.getNumberOfPieces());
 		output.append("\n\n");
 
-		for (Piece piece : pieces) {
+		pieces.forEach(piece -> {
 			output.append("Position in the list: ");
 			output.append(pieces.indexOf(piece));
 			output.append("\n");
 			output.append(piece.toString());
-		}
+		});
 		return output.toString();
 	}
 
