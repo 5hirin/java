@@ -1,8 +1,5 @@
 package catchball;
 
-//TODO colocar powerup e multiplicador
-//TODO menu com ranking, opcao de sair e comecar o jogo
-
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JOptionPane;
@@ -39,7 +36,7 @@ public class Main extends PApplet {
 		background(200);
 		size(LARGURA, ALTURA);
 		random = new Random();
-		bolinhas = new ArrayList<Bolinha>();// TODO
+		bolinhas = new ArrayList<Bolinha>();
 		f = loadFont("CourierNew36.vlw");
 		textFont(f, 12);
 		gerente = new GerenteUsuario();
@@ -48,7 +45,7 @@ public class Main extends PApplet {
 		pontos = 0;
 		bolasPegadas = 0;
 		totalBolas = 0;
-		frameRate(60);// o método draw será chamado 60 vezes por segundo
+		frameRate(60);// o mï¿½todo draw serï¿½ chamado 60 vezes por segundo
 	}
 
 	public void draw() {
@@ -126,7 +123,7 @@ public class Main extends PApplet {
 
 			jogador.setPoints(pontos);
 			jogador.setAproveitamento(((double) bolasPegadas / totalBolas) * 100);
-			String msg = String.format("O jogo acabou, você fez %d pontos. (%.2f%s)",
+			String msg = String.format("O jogo acabou, vocï¿½ fez %d pontos. (%.2f%s)",
 					jogador.getPoints(), jogador.getAproveitamento(), "%");
 			JOptionPane.showMessageDialog(null, msg);
 			gerente.start(jogador);
